@@ -1,0 +1,382 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v10/zhcz-_WihjSQC0oHJ9TCYPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v10/BYPM-GE291ZjIXBWrtCwejOo-lJoxoMO4vrg2XwIHQk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v10/IQHow_FEYlDC4Gzy_m8fcoWiMMZ7xLd792ULpGE4W_Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Montserrat ExtraBold'), local('Montserrat-ExtraBold'), url(https://fonts.gstatic.com/s/montserrat/v10/H8_7oktkjVeeX06kbAvc0Ary2jK1Y0oNyoF1xLf3zMQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v14/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v14/k3k702ZOKiLJc3WVjuplzD0LW-43aMEzIO6XUTLjad8.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Universal styles */
+
+html {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: #444;
+}
+p {
+  color: #888;
+}
+a {
+  color: #48F;
+}
+h3 {
+  font-weight: 500;
+}
+h4 {
+  font-weight: 400;
+}
+p,
+a,
+h4 {
+  font-size: 0.9rem;
+}
+img {
+  max-width: 100%;
+}
+
+/* Flex containers */
+.right .item {
+  width: 423px;
+  height: 10.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+}
+.right .item:hover {
+  background-color: #EEE;
+}
+.right .item:nth-child(1n+2){
+  border-top: 1px solid #DDD;
+}
+.right .item div:last-child {
+  padding: 0 1rem 1rem 1rem;
+}
+.right .item p {
+  margin: 0.5rem 0;
+}
+@media only screen and (min-width: 600px) {
+  .right .item .image {
+    width: 35%;
+    flex-shrink: 0;
+  }
+  .image img:nth-child(1n+2) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .right .item {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-bottom: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .right .item .image {
+    width: 100%;
+  }
+  .image img:first-child {
+    display: none;
+  }
+}
+
+/* Header styles */
+
+header {
+  width: 100%;
+  height: 4rem;
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+}
+.wide,
+.compressed {
+  width: 100%;
+  margin: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+}
+header nav {
+  flex-shrink: 0;
+}
+.logo p {
+    font-size: 1.5rem;
+}
+header span {
+  color: #444;
+  font-weight: 700;
+}
+header ul {
+  font-size: 0.9rem;
+  list-style: none;
+  display: flex;
+}
+header li:nth-child(1n+2) {
+  margin-left: 1rem;
+}
+@media only screen and (min-width: 600px) {
+  header .compressed {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header .wide {
+    display: none;
+  }
+}
+
+/* Main banner styles */
+
+.banner {
+  background-color: #DDD;
+  padding: 6rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.banner img {
+  width: 60%;
+  margin-right: 2.5rem;
+}
+.main {
+  width: 17.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main h1,
+.button {
+  margin: 0;
+}
+.main h3 {
+  margin: 2rem 0 1.5rem 0;
+}
+.button {
+  width: 100%;
+  background-color: #444;
+  transition: all 0.1s ease-in-out;
+}
+.button p {
+  color: white;
+  margin: 0.5rem;
+  text-align: center;
+}
+.button:hover {
+  background-color: #888;
+}
+@media only screen and (max-width: 600px) {
+  .banner,
+  .button {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #888;
+  }
+  .banner img {
+    display: none;
+  }
+  .main {
+    width: 100%;
+    margin: 15.25rem 0 0 0;
+    padding: 2rem 1rem;
+    background-color: #DDD;
+  }
+  .button:hover {
+    background-color: #444;
+  }
+}
+
+/* Information section styles */
+
+.info {
+  display: flex;
+}
+.info .left {
+  padding: 2rem 1.5rem;
+  border-right: 1px solid #DDD;
+}
+.info .left h2 {
+  margin: 2rem 0 0 0;
+}
+.info .left p {
+  margin-top: 1.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .info {
+    padding: 1rem;
+    border-bottom: 1px solid #DDD;
+  }
+  .info .left {
+    display: none;
+  }
+}
+
+/* Course grid styles */
+
+.courses {
+  background-color: #EEE;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.courses h2 {
+  margin: 2rem 0;
+}
+.grid {
+  max-width: 66.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.grid .item {
+  background-color: white;
+  width: 14.75rem;
+  margin: 0.5rem 1rem;
+  padding-bottom: 1.25rem;
+}
+.grid .item h3,
+.grid .item p {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.grid .item h3 {
+  margin-top: 1rem;
+}
+.grid .item p {
+  margin-top: 0.25rem;
+}
+@media only screen and (max-width: 600px) {
+  .courses {
+    background-color: white;
+    margin: 0 1rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid #DDD;
+  }
+  .courses h2 {
+    margin-bottom: 0.75rem;
+  }
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .grid .item {
+    width: 100%;
+    height: auto;
+    margin: 0.25rem 0;
+    padding: 0;
+    background-color: #DDD;
+  }
+  .grid .item img,
+  .grid .item p {
+    display: none;
+  }
+  .grid .item h3 {
+    margin: 1rem;
+  }
+}
+
+/* Thesis exhibit section styles */
+
+.thesis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.thesis h2 {
+  margin: 2rem 0rem;
+}
+.exhibit {
+  display: flex;
+}
+.exhibit .left {
+  padding: 0 1rem 2rem 1.5rem;
+}
+video {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+@media only screen and (max-width: 768px) {
+  .exhibit .left h3,
+  .exhibit .left p,
+  .exhibit .right {
+    display: none;
+  }
+  .exhibit .left {
+    padding: 0;
+  }
+}
+
+/* Footer section styles */
+
+footer {
+  border-top: 1px solid #DDD;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+footer ul {
+  margin-top: 0;
+}
+footer li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  footer {
+    padding-top: 1.5rem;
+  }
+  footer div {
+    margin: 1rem;
+  }
+  footer nav {
+    display: none;
+  }
+}
